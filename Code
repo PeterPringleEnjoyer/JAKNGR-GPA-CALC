@@ -1,5 +1,5 @@
 #So a Blue Tang and a clown fish were chatting, and the Blue Tang was like "I am going to go to the surface, onto dry land, and talk to a human." And the Clownfish was like "Are you shore about that?"
-print('Welcome to my GPA calculator! Get started NOW!!!')
+print("Welcome to my GPA calculator! Get started NOW!!!")
 letter_grade_to_gpa = {
     "A+": 4.0, "A": 4.0, "A-": 3.7,
     "B+": 3.3, "B": 3.0, "B-": 2.7,
@@ -46,4 +46,4 @@ if total_credit_hours > 0:
     print(f"Your GPA is: {gpa:.2f}, I am so proud of you!")
 else:
     print("No courses? BRUH, I WANT TO DO MY JOB!")
-print('Thank you for playing this demo of litius maximus GPA calculator, don't forget to like and subscribe and stay real.')
+print("Thank you for playing this demo of litius maximus GPA calculator, don't forget to like and subscribe and stay real.")
