@@ -1,51 +1,49 @@
 #code or something, idk what I am doin.
-print('goodbye world')
-classes= []
-grades = []
+print('Welcome to my GPA calculator!')
+letter_grade_to_gpa = {
+    "A+": 4.0, "A": 4.0, "A-": 3.7,
+    "B+": 3.3, "B": 3.0, "B-": 2.7,
+    "C+": 2.3, "C": 2.0, "C-": 1.7,
+    "D+": 1.3, "D": 1.0, "F": 0.0
+}
+total_gpa_points = 0.0
+total_credit_hours = 0
+while True:
+    user_input = input("Enter your course type and letter grade (ex: CP A, CAREER F, HONORS B, AP A, etc, enter for next, 'done' to complete): ")
+    
+    if user_input.lower() == "done":
+        break
+    
+    try:
+        level, letter_grade = user_input.split()
+        
+        if level.upper() in ["CP", "AP", "HONORS", "CAREER", "PREP"]:
+            if level.upper() == "CP":
+                credit_hours = 1  # You can modify this to represent the actual credit hours for CP courses
+            elif level.upper() == "AP":
+                credit_hours = 3  # You can modify this to represent the actual credit hours for AP courses
+            elif level.upper() == "HONORS":
+                credit_hours = 2  # You can modify this to represent the actual credit hours for Honors courses
+            elif level.upper() == "CAREER":
+                credit_hours = 0.5  # You can modify this to represent the actual credit hours for Career Prep courses
+            else:
+                credit_hours = 1  # Default credit hours
 
-def collect():
-    i = 0
-    while (i <= 5):
-        className = input("Enter Class Name: ")
-        classes.append(className)
-        i = i +1
+            letter_grade = letter_grade.upper()
 
-
-    print(classes)
-    y = 0
-    while (y <=5):
-        grade = input("Enter Your Grade For Each Class Listed in Order (Letter Form): ")
-        grade = grade.upper()
-        grades.append(grade)
-        y = y + 1
-    calculate()
-
-def calculate():
-    total= 0
-    for element in grades:
-        if element == "A+":
-            total = total + 4.0
-        elif element == "A":
-            total = total + 4.0
-        elif element == "A-":
-            total = total + 3.7
-        elif element == "B+":
-            total = total + 3.3
-        elif element == "B":
-            total = total + 3.0
-        elif element == "B-":
-            total = total + 2.7
-        elif element == "C+":
-            total = total + 2.3
-        elif element == "C":
-            total = total + 2.0
-        elif element == "C-":
-            total = total + 1.7
-        elif element == "D":
-            total = total + 1.0
-    gpa = total / 6
-    print(gpa)
-
-
-collect()
-print('Never gonna give you up')
+            if letter_grade in letter_grade_to_gpa:
+                gpa = letter_grade_to_gpa[letter_grade]
+                total_gpa_points += gpa * credit_hours
+                total_credit_hours += credit_hours
+            else:
+                print(f"Invalid letter grade: {letter_grade}. Please enter a viable letter grade.")
+        else:
+            print("Invalid course type. Please enter 'CP,' 'AP,' 'Honors,' or 'Career,' for the course type.")
+    except ValueError:
+        print("Invalid input format. You must enter in the format 'Type LetterGrade'.")
+if total_credit_hours > 0:
+    gpa = total_gpa_points / total_credit_hours
+    print(f"Your GPA is: {gpa:.2f}, I am so proud of you!")
+else:
+    print("No courses? BRUH, I WANT TO DO MY JOB!")
+print('Thank you for playing this demo of litius maximus GPA calculator, don't forget to like and subscribe and stay real.')
