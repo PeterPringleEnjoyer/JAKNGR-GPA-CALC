@@ -1,5 +1,5 @@
-#code or something, idk what I am doin.
-print('Welcome to my GPA calculator!')
+#So a Blue Tang and a clown fish were chatting, and the Blue Tang was like "I am going to go to the surface, onto dry land, and talk to a human." And the Clownfish was like "Are you shore about that?"
+print('Welcome to my GPA calculator! Get started NOW!!!')
 letter_grade_to_gpa = {
     "A+": 4.0, "A": 4.0, "A-": 3.7,
     "B+": 3.3, "B": 3.0, "B-": 2.7,
@@ -9,25 +9,25 @@ letter_grade_to_gpa = {
 total_gpa_points = 0.0
 total_credit_hours = 0
 while True:
-    user_input = input("Enter your course type and letter grade (ex: CP A, CAREER F, HONORS B, AP A, etc, enter for next, 'done' to complete): ")
+    user_input = input("Enter your course type and letter grade (ex: CP A, CAREER F, HONORS B, AP A, etc, enter for next, 'calculate' to complete): ")
     
-    if user_input.lower() == "done":
+    if user_input.lower() == "calculate":
         break
     
     try:
         level, letter_grade = user_input.split()
         
-        if level.upper() in ["CP", "AP", "HONORS", "CAREER", "PREP"]:
+        if level.upper() in ["CP", "AP", "HONORS", "CAREER"]:
             if level.upper() == "CP":
-                credit_hours = 1  # You can modify this to represent the actual credit hours for CP courses
+                credit_hours = 1
             elif level.upper() == "AP":
-                credit_hours = 3  # You can modify this to represent the actual credit hours for AP courses
+                credit_hours = 3
             elif level.upper() == "HONORS":
-                credit_hours = 2  # You can modify this to represent the actual credit hours for Honors courses
+                credit_hours = 2
             elif level.upper() == "CAREER":
-                credit_hours = 0.5  # You can modify this to represent the actual credit hours for Career Prep courses
+                credit_hours = 0.5
             else:
-                credit_hours = 1  # Default credit hours
+                credit_hours = 1
 
             letter_grade = letter_grade.upper()
 
