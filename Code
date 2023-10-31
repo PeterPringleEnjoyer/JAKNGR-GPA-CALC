@@ -36,7 +36,7 @@ while True:
                 total_gpa_points += gpa * credit_hours
                 total_credit_hours += credit_hours
             else:
-                print(f"Invalid letter grade: {letter_grade}. Please enter a viable letter grade.")
+                print(f"Invalid letter grade: {letter_grade}. Just enter a viable letter grade. PWEASE!")
         else:
             print("Invalid course type. Please enter 'CP,' 'AP,' 'Honors,' or 'Career,' for the course type.")
     except ValueError:
